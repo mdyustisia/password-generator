@@ -1,0 +1,120 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css"
+    />
+    <link rel="stylesheet" href="index.css" />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome -->
+    <script
+      src="https://kit.fontawesome.com/3b3c5e01ca.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Generate a <span class="header">random password</span></h1>
+      <p class="desc">Create a strong password with this tool</p>
+      <div class="menu-container">
+        <div class="password-filter">
+          <h3>Filter</h3>
+          <div class="filter-container">
+            <!-- ========== -->
+            <div class="filters">
+              <p>Length</p>
+              <input
+                class="range"
+                type="range"
+                id="password-length"
+                name="password-length"
+                min="10"
+                max="24"
+                onchange="rangeSlide(this.value)"
+                onmousemove="rangeSlide(this.value)"
+                value="14"
+              /><span id="rangeValue">14</span>
+            </div>
+            <!-- ========== -->
+            <div class="filters">
+              <p>Symbols</p>
+              <input
+                type="checkbox"
+                id="includeSymbols"
+                onclick="symbolsCheck()"
+                checked
+              /><label for="includeSymbols">Toggle</label
+              ><span id="symbolsValue">Yes</span>
+            </div>
+            <!-- ========== -->
+            <div class="filters">
+              <p>Numbers</p>
+              <input
+                type="checkbox"
+                id="includeNumbers"
+                onclick="numbersCheck()"
+                checked
+              /><label for="includeNumbers">Toggle</label
+              ><span id="numbersValue">Yes</span>
+            </div>
+            <!-- ========== -->
+            <div class="filters">
+              <p>Uppercase</p>
+              <input
+                type="checkbox"
+                id="includeUppercase"
+                onclick="uppercaseCheck()"
+                checked
+              /><label for="includeUppercase">Toggle</label
+              ><span id="uppercaseValue">Yes</span>
+            </div>
+            <!-- ========== -->
+            <div class="filters">
+              <p>Lowercase</p>
+              <input
+                type="checkbox"
+                id="includeLowercase"
+                onclick="lowercaseCheck()"
+                checked
+              /><label for="includeLowercase">Toggle</label
+              ><span id="lowercaseValue">Yes</span>
+            </div>
+          </div>
+        </div>
+        <button id="generate-btn" onclick="generatePassword()">
+          Generate Passwords
+        </button>
+      </div>
+      <hr />
+      <div class="password-lists">
+        <div class="password-list">
+          <p id="list-one-el"></p>
+          <button class="copy-btn" onclick="copyOne(this)">
+            <i class="fa-solid fa-clipboard"></i>
+          </button>
+        </div>
+        <div class="password-list">
+          <p id="list-two-el"></p>
+          <button class="copy-btn" onclick="copyTwo(this)">
+            <i class="fa-solid fa-clipboard"></i>
+          </button>
+        </div>
+        <div class="password-list">
+          <p id="list-three-el"></p>
+          <button class="copy-btn" onclick="copyThree(this)">
+            <i class="fa-solid fa-clipboard"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>
